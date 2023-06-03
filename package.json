@@ -1,14 +1,14 @@
 {
-  "name": "express-api",
+  "name": "hark-api",
   "version": "1.0.0",
-  "description": "practice express crud api",
-  "main": "src/server.js",
+  "description": "back end for hark tech test",
+  "main": "src/server.ts",
   "type": "module",
   "scripts": {
     "start": "ts-node-esm src/server.ts",
     "test": "jest"
   },
-  "author": "",
+  "author": "Rob Pines",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
