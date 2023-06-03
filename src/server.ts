@@ -15,6 +15,8 @@ app.get("/ping", (req: Request, res: Response) => {
 });
 
 app.get("/", async (req: Request, res: Response) => {
+  // locally this is fine, but this should be set to environment variables
+  res.set("Access-Control-Allow-Origin", "http://localhost:1234");
   try {
     const data = await getAllData();
     res.status(200).json(data);
