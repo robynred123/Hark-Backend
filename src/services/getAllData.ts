@@ -1,6 +1,6 @@
 import { readCSVFile } from "../data/connection.ts";
 import { EnergyData, WeatherData, MappedData } from "../types/index.ts";
-import { formatDate } from "../utils/formatDate.ts";
+import { formatDate, formatUKDate } from "../utils/formatDate.ts";
 
 const getAllData = async () => {
   try {
@@ -41,7 +41,7 @@ const getAllData = async () => {
     weatherData.map((w) => {
       // get first value off w, this would break/ return the incorrect data if the data structure changes.
       // w["date"] is returning undefined when http testing, however works with jest
-      const formattedDate = formatDate(Object.values(w)[0]);
+      const formattedDate = formatUKDate(Object.values(w)[0]);
       return (mappedData[formattedDate] = {
         avgTemperature: w.AverageTemperature,
         avgHumidity: w.AverageHumidity,

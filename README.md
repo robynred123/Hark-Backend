@@ -27,6 +27,12 @@ The server will run on http://localhost:8080/
 
 To test this is working smoothly, you can make a test GET request to http://localhost:8080/ping
 
+If you wish to test the root GET endpoint using postman, please comment out line 19 in `server.ts`:
+
+`res.set("Access-Control-Allow-Origin", "http://localhost:1234")`
+
+Please be aware, that if this is commented out, requests from the front-end component will fail.
+
 ## Tests
 
 Tests have been written using jest.
